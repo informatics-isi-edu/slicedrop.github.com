@@ -567,7 +567,7 @@ function parse(data) {
   // initialize renderers
   initializeRenderers();
 
-  printDebug("in parse call");
+//  printDebug("in parse call");
 
   // check for special case if a volume, a labelmap and a colortable was dropped
   if (data['volume']['file'].length == 2 && data['colortable']['file'].length == 1) {
@@ -654,7 +654,7 @@ function parse(data) {
 
    // add the volume
    ren3d.add(volume);
-   printDebug("in parse call -- add volume");
+//   printDebug("in parse call -- add volume");
 
    } else {
      if (data['volume']['file'].length > 1) {
