@@ -51,7 +51,7 @@ jQuery(document).ready(function() {
   argsParsed = {};
   for (var i=0; i < args.length; i++)
   {
-      arg = unescape(args[i]);
+      arg = args[i]; // used to unescape(args[i]) which was wrong
 
       if (arg.length == 0) {
         continue;
@@ -59,6 +59,7 @@ jQuery(document).ready(function() {
 
       if (arg.indexOf('=') == -1)
       {
+          arg = decodeURIComponent(arg);
           argsParsed[arg.replace(new RegExp('/$'),'').trim()] = true;
       }
       else
@@ -73,6 +74,7 @@ jQuery(document).ready(function() {
                 argsParsed[kvp[0].trim()] = [{"name":_url, "size":0}];
               }
           } else {
+              kvp[1] = decodeURIComponent(kvp[1]);
               argsParsed[kvp[0].trim()] = kvp[1].replace(new RegExp('/$'),'').trim();
           }
       }
