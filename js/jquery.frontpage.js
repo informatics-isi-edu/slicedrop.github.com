@@ -51,7 +51,7 @@ jQuery(document).ready(function() {
   argsParsed = {};
   for (var i=0; i < args.length; i++)
   {
-      arg = args[i]; // used to unescape(args[i]) which was wrong
+      var arg = args[i]; // used to unescape(args[i]) which was wrong
 
       if (arg.length == 0) {
         continue;
@@ -61,6 +61,7 @@ jQuery(document).ready(function() {
       {
           arg = decodeURIComponent(arg);
           argsParsed[arg.replace(new RegExp('/$'),'').trim()] = true;
+window.console.log("XX3 ",arg.replace(new RegExp('/$'),'').trim());
       }
       else
       {
@@ -128,7 +129,6 @@ jQuery(document).ready(function() {
     if (_url.length > 1) {
 //MEI
       _url=document.location.search.substring(1);
-//MEI window.console.log('Found plain args..'+_url);
       loadFile(_url);
     }
     //}
