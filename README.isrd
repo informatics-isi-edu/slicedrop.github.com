@@ -1,0 +1,14 @@
+
+The 3d viewer based on a 3d example from slicedrop 
+
+slicedrop in the wild
+  https://github.com/slicedrop/slicedrop.github.com.git
+
+forked from slicedrop in the wild
+  https://github.com/informatics-isi-edu/slicedrop.github.com.git
+
+Since we are not going to generate any pull request back to 
+slicedorp, informatics-isi-edu contains all the changes for our
+3d viewer
+
+
