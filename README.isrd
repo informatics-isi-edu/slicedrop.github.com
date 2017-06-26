@@ -1,5 +1,8 @@
+# 3d viewer
 
-The 3d viewer based on a 3d example from slicedrop 
+The 3D viewer based on a 3D example from slicedrop 
+
+## Overview
 
 slicedrop in the wild
   https://github.com/slicedrop/slicedrop.github.com.git
@@ -8,7 +11,57 @@ forked from slicedrop in the wild
   https://github.com/informatics-isi-edu/slicedrop.github.com.git
 
 Since we are not going to generate any pull request back to 
-slicedorp, informatics-isi-edu contains all the changes for our
-3d viewer
+slicedorp, informatics-isi-edu/slicedrop.github.com.git contains all 
+the changes for our 3d viewer
+
+## Download and Run 
+
+You can clone the source repository with Git by running:
+
+  git clone https://github.com/informatics-isi-edu/slicedrop.github.com.git
+
+
+## Invoking the viewer
+
+Paremeters may be passed to 3D viewer as a URL query parameter. 
+
+| Parameter | Value | Description |
+| --- | --- | --- |
+| **url** | URL | url of a input datafile |
+| **camera_x** | int | set x location of renderer3D's camera location(0-100) |
+| **camera_y** | int | set y location of renderer3D's camera location(0-100) |
+| **camera_z** | int | set z location of renderer3D's camera location(0-100) |
+
+
+## Examples
+
+Plotting a single volume data file 
+
+```
+view_on_load.html?
+  url=http://localhost/data/Image_Expt_1_10dpf_Fish1_Zoom1_GFP.ome_copy.tif
+```
+
+Plotting a single volume and a single mesh data file 
+(inherit limitation of original slicedrop viewer is limitation of at most, 
+a single volume, a single mesh and a single fiber is allowed)
+
+```
+view_on_load.html?
+  url=http://localhost/data/3mesh/JI296CCMB_Control_P0_Hard_Tissue.transformed.nii&
+  url=http://localhost/data/3mesh/JI296CCMB.obj&
+```
+(inherit limiation of original slicedrop viewer is limitation of at most, 
+a single volume, a single mesh and a single fiber is allowed)
+
+Plotting a data file with camera parameters
+
+```
+view_on_load.html?
+  url=http://localhost/data/Image_Expt_1_10dpf_Fish1_Zoom1_GFP.ome_copy.tif&
+  camera_x=X&
+  camera_y=Y&
+  camera_z=Z
+```
 
 

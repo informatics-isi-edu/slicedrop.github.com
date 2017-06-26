@@ -93,8 +93,11 @@ window.console.log("XX3 ",arg.replace(new RegExp('/$'),'').trim());
   if( ('camera_x' in argsParsed) || ('camera_y' in argsParsed) ||
              ('camera_z' in argsParsed) ) {
     camera_x = ('camera_x' in argsParsed)? (argsParsed['camera_x']):0;
+    camera_x = parseInt(camera_x);
     camera_y = ('camera_y' in argsParsed)? (argsParsed['camera_y']):100;
+    camera_y = parseInt(camera_y);
     camera_z = ('camera_z' in argsParsed)? (argsParsed['camera_z']):0;
+    camera_z = parseInt(camera_z);
     ren3d_camera_position = [camera_x, camera_y, camera_z]; 
   } else {
     ren3d_camera_position = null;
