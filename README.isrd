@@ -25,9 +25,9 @@ You can clone the source repository with Git by running:
 
 Paremeters may be passed to 3D viewer as a URL query parameter. 
 
-| Parameter | Value | Description |
-| --- | --- | --- |
-| **url** | URL | url of a input datafile |
+| Parameter    | Value | Description                                         |
+| ---          | --- | ---                                                   |
+| **url**      | URL | url of a input datafile                               |
 | **camera_x** | int | set x location of renderer3D's camera location(0-100) |
 | **camera_y** | int | set y location of renderer3D's camera location(0-100) |
 | **camera_z** | int | set z location of renderer3D's camera location(0-100) |
@@ -51,7 +51,7 @@ view_on_load.html?
   url=http://localhost/data/3mesh/JI296CCMB_Control_P0_Hard_Tissue.transformed.nii&
   url=http://localhost/data/3mesh/JI296CCMB.obj&
 ```
-(inherit limiation of original slicedrop viewer is limitation of at most, 
+(inherit limitation of original slicedrop viewer is the limit of at most, 
 a single volume, a single mesh and a single fiber is allowed)
 
 Plotting a data file with camera parameters

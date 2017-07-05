@@ -121,7 +121,6 @@ window.console.log("XX3 ",arg.replace(new RegExp('/$'),'').trim());
   } else if ('url' in argsParsed) {
 
 //MEI    window.console.log('Found urls ->' + argsParsed['url'].length);
-//MEI
     var url_list=argsParsed['url'];
     selectfiles(url_list);
 
