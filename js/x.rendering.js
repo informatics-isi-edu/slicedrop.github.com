@@ -368,7 +368,7 @@ function read(files) {
    }
 
    var _fileName = f.name;
-   var _fileExtension = _fileName.split('.').pop().toUpperCase();
+   var _fileExtension = _fileName.split('.').pop().split(':')[0].toUpperCase(); // (RS) drop hatrac obj ver is found, no effect if not present
 
    // check for files with no extension
    if (_fileExtension == _fileName.toUpperCase()) {
@@ -585,9 +585,14 @@ function parse(data) {
    // we have a volume
    volume = new X.volume();
    volume.file = data['volume']['file'].map(function(v) {
-
+     // (RS) xtk chokes on hatrac object versions appearing after the file extension.
+     if (v.name.split('.').pop().includes(':')) {
+       console.log("Filename includes hatrac objver suffix: " + v.name);
+       var name = v.name.substring(0, v.name.lastIndexOf(':'));
+       console.log("Returning instead: " + name);
+       return name;
+     }
      return v.name;
-
    });
    volume.filedata = data['volume']['filedata'];
    var colortableParent = volume;
